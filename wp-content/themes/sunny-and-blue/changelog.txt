@@ -1,0 +1,87 @@
+Theme Name:   Sunny and Blue
+File Name:    Changelog
+Tested up to: 4.5.1
+Stable tag:	  1.0.9
+
+== Changelog ==
+= 1.0.9 =
+* Removed unused $theCatID variable
+* Removed echo for the_archive_title()
+* Fixed Site title  display issue
+* Removed remove_theme_support( 'custom-header' )
+* Added theme prefix to: new_excerpt_length, wpex_pagination and theme_slug_widgets_init
+* Removed  (function_exists('dynamic_sidebar') condition in footer
+* Replaced esc_attr with esc_attr__  for translating and escaping
+
+
+= 1.0.8 =
+* Removed template name from index.php and archive.php 
+* Replaced is_archive() with is_page('archive') for archive page check
+* Used get_queried_object_id() to obtain term ID instead of $wp_query
+* Used is_post_type_archive( 'comic' ) ) to check post type of archive instead of $wp_query
+* Used is_tax( 'chapters' ) to check for chapter archive instead of $wp_query
+* Fixed header text and color options
+* Replaced custom header in branding area with core custom logo instead
+* Removed custom header support
+* Changed placeholder text in footer to display only for editors
+* Removed Social Media header from footer
+* Added default widgets to footer area
+* Added esc_url for get_page_link in sunny-and-blue-functions.php
+* Changed enqueued google fonts style prefix
+* Use of esc_attr in title attribute for social icons 
+* Moved load_theme_textdomain needs to sunny_and_blue_setup()
+* Making text strings translation ready
+
+
+= 1.0.7 =
+* Simplified archive.php by leveraging the_archive_title. 
+* Removed improper echo of the_permalink() and the_title() in archive.php and tag.php
+* Removed improper echo of do_action('comic-post-info') in archive.php and tag.php
+* Removed unused get_the_post_thumbnail
+* Added check that the plugin is enabled before trying to output shortcode in archive.php
+* Replaced use of get_template_part with require_once function in functions.php
+* Replaced wp_nav_menu depth of 100 with 0 for unlimited depth in header.php
+* Moved all references to add_theme_support to a function hooked onto after_setup_theme
+* Removed Copyright from footer
+* Widgetized footer
+* Added esc_url to get_permalink calls in archive.php and tag.php
+* Corrected WordPress spelling in style.css
+* Changed Author URL to http://www.sunnyandblue.com/
+* Changed Theme URL to http://www.sunnyandblue.com/sunny-blue-theme/
+* Removed unused wow.min.js
+* Removed copy jQuery file
+* Removed imports of styles in style.css and added them to sunny_and_blue_enqueue_style
+* Standardized prefix handles for scripts and styles. i.e. Custom scripts and styles require prefixed handles, third party should not be prefixed.
+* Added licensing for comic in screenshot, BootStrap, scrollSpeed, and wp_bootstrap_navwalker
+* Making text translation ready
+
+= 1.0.6 =
+* Prevent navigation bar from overlapping with WordPress admin navigation bar
+
+= 1.0.5 =
+* wp_enqueue_style for default style.css.
+* Removed custom functions from functions.php and moved to seperate file (includes/sunny-and-blue-functions.php).
+* Moved wp_bootstrap_navwalker.php to includes/ folder
+
+= 1.0.4 =
+* Fixed walker menu bug.
+* Removed restriction on menu depth.
+* Updated footer content description
+* Removed jquery enqueue script
+
+= 1.0.3 =
+* Removed double quote
+
+= 1.0.2 =
+* More security enhancements
+* Minor CSS and code adjustments
+* Added license for background.png
+* Added description to all templates
+* Removed hard coded link
+
+= 1.0.1 =
+* Fixed single post, index and single page issue that was not displaying when Comic Easel plugin was not installed
+* Fixed sub-menu issue. Sub-menus were not being displayed.
+
+= 1.0.0 =
+Initial Release

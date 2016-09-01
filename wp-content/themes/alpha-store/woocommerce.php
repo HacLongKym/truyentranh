@@ -1,0 +1,27 @@
+<?php get_header(); ?>
+
+<?php get_template_part( 'template-parts/template-part', 'head' ); ?>
+
+<?php get_template_part( 'template-parts/template-part', 'topnav' ); ?>
+
+<!-- start content container -->
+<div class="row rsrc-content">
+
+	<?php //left sidebar ?>
+	<?php get_sidebar( 'left' ); ?>
+
+
+    <div class="col-md-<?php alpha_store_main_content_width(); ?> rsrc-main">
+        <div class="woocommerce">
+			<?php woocommerce_content(); ?>
+        </div>
+    </div><!-- /#content -->      
+
+	<?php //get the right sidebar ?>
+	<?php get_sidebar( 'right' ); ?>
+
+</div>
+<!-- end content container -->
+
+<?php get_footer(); ?>
+
