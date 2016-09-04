@@ -1,0 +1,24 @@
+== Changelog ==
+
+= 1.0.7.1 =
+* Footer Formatting
+
+= 1.0.7 =
+27/6/16
+
+* Removed Deprecated Template Tags from Style.css
+* Text Domain added to Style.css
+* Title tag removed from header.php and declared in functions.php
+* changed to esc_url( get_template_directory_uri() ) in content.php
+
+
+
+(2014-15-03)
+* Tidied code and removed whitespace
+
+(2014-01-28)
+* Added Custom Logo Upload to Theme Customizer.
+* Added Footer text to Theme Customizer.
+
+(2013-09-27)
+Initial Release

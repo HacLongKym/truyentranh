@@ -1,0 +1,693 @@
+/*
+Theme Name: Gridster-Lite
+Theme URI: http://themefurnace.com/gridster-lite-theme/
+Author: ThemeFurnace
+Author URI: http://themefurnace.com
+Description: Gridster is a tidy little portfolio theme for photographers and creative types. It has a grid-based homepage, left sidebar and space to show off your images in style. The theme is responsive so it will look good on every screen, from mobiles and tablets up to large desktop displays. Now upload your own logo via the theme customizer.
+Pro version of this theme includes a full color and Google Font options, 18 More Themes and Full Customer Support. See http://themefurnace.com/gridster-theme
+
+Version: 1.0.7.1
+License: GNU General Public License
+License URI: license.txt
+Tags: left-sidebar, custom-background, custom-menu, featured-images, sticky-post, threaded-comments, sticky-post, translation-ready
+
+Text Domain: gridster-lite
+
+Gridster is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+*/
+
+/* Import Reset and Defaults */
+@import url("inc/defaults.css");
+
+
+/* Links */
+
+a {
+	color: #8fb9d4;
+	text-decoration: none;
+}
+a:visited {
+	color:#8fb9d4;
+}
+a:hover, a:focus, a:active {
+	color: #384249;
+}
+.sidebarwidget a {
+	color: #8fb9d4;
+	text-decoration: none;
+}
+.sidebarwidget a:visited {
+	color:#8fb9d4;
+}
+.sidebarwidget a:hover, .sidebarwidget a:focus, .sidebarwidget a:active {
+	color: white;
+}
+.posttitle a {
+	color: #31373b;
+	text-decoration: none;
+}
+.posttitle a:visited {
+	color:#31373b;
+}
+.posttitle a:hover, .posttitle a:focus, .posttitle a:active {
+	color: #8fb9d4;
+}
+.postmeta a {
+	color: #979A9B;
+	text-decoration: none;
+}
+.postmeta a:visited {
+	color:#979A9B;
+}
+.postmeta a:hover, .postmeta a:focus, .postmeta a:active {
+	color: #8fb9d4;
+}
+
+#blogtitle{
+	font-family: 'Open Sans Condensed', sans-serif;
+	color:white;
+	font-size:30px;
+	padding:10px;
+	text-transform:uppercase;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#blogtitle a{
+	color:white;
+}
+
+/* Theme Layout */
+#container {
+	width:1250px;
+	overflow:hidden;
+}
+#sidebar {
+	background-color: #384249;
+	width:225px;
+	border-right:5px solid #476172;
+	border-left:5px solid #476172;
+	text-align: center;
+	float: left;
+	color:#91a3af;
+	font-size:12px;
+	line-height: 15px;
+	padding-bottom:30px;
+	margin-bottom: -5000px;
+	padding-bottom: 5000px;
+}
+.logo {
+	max-width:225px;
+	overflow: hidden;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.tagline {
+	margin-left:15px;
+	margin-right:15px;
+	font-size: 12px;
+	line-height:15px;
+	padding-bottom:15px;
+	border-bottom: 1px solid #272F34;
+	box-shadow: 0 1px 0 #4B6272;
+}
+.sidebarwidget {
+	text-align:left;
+	margin-left:15px;
+	margin-right:15px;
+	padding-bottom:15px;
+	margin-bottom:15px;
+	border-bottom: 1px solid #272F34;
+	box-shadow: 0 1px 0 #4B6272;
+}
+.sidebarwidget ul {
+	margin:0px;
+	list-style-type:none;
+	margin-left:10px;
+	margin-top:10px;
+}
+.sidebarwidget li {
+	font-size:12px;
+	margin-bottom:10px;
+}
+.sidetitle {
+	color:white;
+	font-size:18px;
+	text-transform: uppercase;
+	margin-bottom:15px;
+	margin-left:10px;
+}
+#main {
+	margin-left:22px;
+	margin-top:22px;
+	float: right;
+	width:990px;
+	z-index:4;
+}
+
+.poste {
+	background-color: white;
+	text-align: center;
+	width:225px;
+	min-height:228px;
+	border-bottom:5px solid #ECEDED;
+	margin-right:18px;
+	position:relative;
+	margin-bottom:22px;
+	display: inline-block;
+	vertical-align: top;
+}
+.posttitle {
+	color:#31373b;
+	font-size:18px;
+	margin-top:10px;
+	margin-bottom:2px;
+	padding-right:10px;
+	padding-left:10px;
+}
+.postmeta {
+	font-size:12px;
+	padding-right:10px;
+	padding-left:10px;
+}
+.postimg {
+	width:225px;
+	/*height:158px;*/
+}
+.portfoliooverlay span {
+	font-size:40px;
+	font-weight: bold;
+	background-color: #384249;
+	height: 45px;
+	width: 75px;
+	display:block;
+	text-align: center;
+	margin: 0 auto;
+	position:absolute;
+	top:0px;
+	left:0px;
+	margin-left:80px;
+	margin-top:45px;
+	-moz-opacity: 0.20;
+	-khtml-opacity: 0.20;
+	opacity: 0.20;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=20);
+	padding-top:30px;
+	-moz-border-radius:75px;
+	-webkit-border-radius: 75px;
+	border-radius: 75px;
+	line-height: 15px;
+}
+.portfoliooverlay:hover span {
+	-webkit-transition: opacity 1s ease-in-out;
+	opacity: 0.8;
+	-webkit-transition-duration: 0.4s;
+	-moz-transition: opacity 1s ease-in-out;
+	opacity: 0.8;
+	-moz-transition-duration: 0.4s;
+}
+.portfoliooverlay {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:225px;
+	height:158px;
+}
+.portfoliooverlay:hover {
+	-webkit-transition: border-bottom 1s ease-in-out;
+	opacity: 1;
+	-webkit-transition-duration: 0.4s;
+	-moz-transition: border-bottom 1s ease-in-out;
+	opacity: 1;
+	-moz-transition-duration: 0.4s;
+}
+.portfoliooverlay a {
+	color:white;
+	display:block;
+	width:225px;
+	height:158px;
+}
+.portfoliooverlay a:hover {
+	color:white;
+	transition: all 0.5s ease-out;
+}
+.postimage {
+	max-width:300px;
+	width: 100%;
+}
+.img-to-read {
+	max-width:990px;
+}
+#postheading {
+	padding-top:35px;
+	margin-top:100px;
+	line-height: 35px;
+}
+#postheading h1 {
+	padding-left:10px;
+	padding-right:30px;
+	font-size:35px !important;
+}
+#content {
+	background-color: white;
+	padding:30px;
+	padding-bottom:20px;
+	max-width:990px;
+	margin-top:-140px;
+	overflow:auto;
+}
+#meta {
+	font-size: 12px;
+	padding-left:5px;
+	padding-right:30px;
+	padding-top:10px;
+	padding-bottom:25px;
+	margin-left:-10px;
+}
+
+#meta li {
+	display:inline;
+	margin-right:40px;
+	line-height: 30px;
+}
+#meta .datemeta {
+	background-image: url(img/date-icon.png);
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	padding-left:27px;
+	padding-top:7px;
+	padding-bottom:7px;
+}
+#meta .categorymeta {
+	background-image: url(img/category-icon.png);
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	padding-left:27px;
+	padding-top:7px;
+	padding-bottom:7px;
+}
+#meta .commentsmeta {
+	background-image: url(img/comments-icon.png);
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	padding-left:27px;
+	padding-top:7px;
+	padding-bottom:7px;
+}
+#meta .authormeta {
+	background-image: url(img/author-icon.png);
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	padding-left:27px;
+	padding-top:7px;
+	padding-bottom:7px;
+}
+
+
+/* Titles */
+.page-title {
+	font-size:25px;
+	margin-bottom:30px;
+}
+#reply-title {
+	font-size:25px;
+	margin-left:10px;
+	margin-bottom:30px;
+	margin-top:70px;
+}
+.comments-title {
+	font-size:25px;
+	margin-left:10px;
+	margin-bottom:30px;
+	margin-top:70px;
+}
+
+
+/* Comments */
+
+.comment-notes {
+	font-size:12px;
+}
+.form-allowed-tags {
+	display:none;
+}
+.comment-form-comment textarea {
+	width:70%;
+	clear:both;
+	padding:8px;
+}
+.comment-form-comment label {
+	display:none;
+}
+.commentinfo {
+	font-size: 11px;
+	margin-top:10px;
+}
+.cancelcomment {
+	margin-bottom:10px;
+}
+.loggedinauthor {
+}
+.form-allowed-tags {
+	font-size:11px;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+.comment-form-author label {
+	margin-top:10px;
+	font-size:11px;
+	display:block;
+}
+.comment-form-author input {
+	width:50%;
+	padding:8px;
+}
+.comment-form-email label {
+	font-size:11px;
+	display:block;
+}
+.comment-form-email input {
+	width:50%;
+	padding:8px;
+}
+.comment-form-comment label {
+	font-size:11px;
+	display:block;
+}
+.comment-form-comment input {
+	width:50%;
+	padding:8px;
+}
+.comment-form-url label {
+	font-size:11px;
+	display:block;
+}
+.comment-form-url input {
+	width:50%;
+	margin-bottom:20px;
+	padding:8px;
+}
+.edit-link {
+	margin-left:10px;
+	clear:both;
+	display:block;
+}
+.comments {
+	background-color: white;
+	width:100%;
+	margin-top:40px;
+	position:relative;
+	-webkit-box-shadow: 0px 0px 3px 0px #CCCBCB;
+	box-shadow: 0px 0px 3px 0px #CCCBCB;
+	moz-box-shadow: 0px 0px 3px 0px #CCCBCB;
+	margin-left:40px;
+	margin-bottom:40px;
+	padding-bottom:20px;
+	clear:both;
+}
+.comments ol {
+}
+#commentsform {
+	padding-right:10px;
+	position:relative;
+	margin-bottom:0px;
+}
+#comments p {
+}
+.commentstop {
+	border-bottom:1px solid #ececec;
+	padding-bottom:10px;
+	padding-left:0px;
+	padding-right:0px;
+	padding-top:20px;
+}
+.yours {
+	float:right;
+	margin-top:20px;
+}
+.comment {
+	padding-bottom:20px;
+}
+.avatar {
+	float:left;
+	margin-right:10px;
+	padding: 2px;
+	border: 1px solid #C8C8C8;
+}
+.comment-author {
+	font-size: 12px;
+	color:#010101;
+	clear:both;
+}
+.comment-author a {
+	border-bottom:0px;
+	color:#000000;
+}
+.bypostauthor {
+}
+.comment-meta {
+	font-size: 11px;
+}
+.comment-meta a {
+	border-bottom:0px;
+}
+.comment-meta a:visited {
+	border-bottom:0px;
+}
+.comment-body {
+	margin-left:20px;
+}
+.comment-body p {
+	margin-top:10px;
+	line-height:20px;
+	margin-left:47px;
+}
+.comment li {
+	margin-top:20px;
+}
+.comment {
+	list-style-type:none;
+}
+.children ul {
+}
+.depth-1 {
+	margin-top:20px;
+}
+.depth-2 {
+	margin-top:20px;
+	margin-left:10%;
+}
+.depth-3 {
+	margin-top:20px;
+	margin-left:10%;
+}
+#comments .comment:last-child.depth-2 {
+}
+#comments .comment:first-child.depth-2 {
+}
+#comments .comment:last-child.depth-3 {
+}
+.comment-author-admin {
+}
+#comments ul.children {
+}
+.reply {
+	float: right;
+	position:relative;
+	border-bottom:1px solid #ECECEC;
+	width:100%;
+	margin-bottom:25px;
+	padding-bottom:25px;
+	clear:both;
+}
+.comment-reply-link {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 3px;
+	background: #e6e6e6;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+a.comment-reply-link {
+	float:right
+}
+a.comment-reply-link:visited {
+	color: rgba(0, 0, 0, .8);
+}
+a.comment-reply-link:hover {
+	border-color: #ccc #bbb #aaa #bbb;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+.commentinput {
+	width:50%;
+	margin-bottom:20px;
+}
+.commentbox {
+	width:70%;
+	height:150px;
+}
+.commentinfo {
+	font-size: 11px;
+	margin-top:20px;
+}
+.commentsubmit {
+	margin-top:20px;
+	display: block;
+	background-color: #464646;
+	color:white;
+	border:0px;
+	font-size: 11px;
+	padding:5px 15px;
+}
+.commentsubmit:hover {
+	background-color: #5E5E5E;
+	cursor: pointer;
+}
+.cancelcomment {
+	margin-bottom:10px;
+}
+.loggedinauthor {
+}
+
+
+/* Footer */
+
+#footer {
+	font-size:12px;
+	clear:both;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.nav-previous, .nav-next {
+	padding-top:10px;
+	padding-bottom:10px;
+	display:block;
+}
+
+
+/* Responsive*/
+
+img {
+	max-width: 100%;
+	height:auto;
+}
+
+/* Portrait Tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+ #container {
+ width:680px;
+}
+}
+
+
+/* 1024 Screens */
+@media only screen and (min-width: 1000px) and (max-width: 1249px) {
+#container {
+ width:1000px;
+}
+ #main {
+ width:740px;
+}
+ .portfoliooverlay span {
+ line-height: 10px;
+}
+}
+
+
+/* Portrait Tablets */
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+ #container {
+ width:750px;
+}
+ #main {
+ width:490px;
+}
+ .portfoliooverlay span {
+ line-height: 10px;
+}
+}
+
+
+/*  Portrait Mobiles */
+@media only screen and (max-width: 767px) {
+ #container {
+ width:320px;
+}
+ #sidebar {
+ width:310px;
+ margin-bottom: 0px;
+ padding-bottom: 30px;
+}
+#main {
+ width:285px;
+ float: left;
+ margin:0 auto;
+ text-align:center;
+ margin-left:0px;
+ padding-top:25px;
+ padding-left:25px;
+ text-align: left;
+}
+.portfoliooverlay span {
+ line-height: 10px;
+}
+ #postheading {
+margin-top:-20px;
+}
+.poste{
+	margin-left:25px;
+}
+ #content {
+ margin-top:-20px;
+}
+ #meta li {
+ display: list-item;
+ list-style-type: none;
+ width:150px;
+ line-height: 18px;
+}
+}
+
+
+/* Landscape Mobiles */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ #container {
+ width:540px;
+}
+ #sidebar {
+ width:225px;
+ border-right:5px solid #476172;
+ border-left:5px solid #476172;
+ margin-bottom: -5000px;
+ padding-bottom: 5000px;
+}
+ #main  {
+ width:230px;
+ margin-left:25px;
+ float:left;
+ text-align: left;
+}
+.poste{
+	margin-left:15px;
+}
+.portfoliooverlay span {
+ line-height: 10px;
+}
+
+ #content {
+
+}
+ #meta li {
+ display: list-item;
+ list-style-type: none;
+ width:150px;
+ line-height: 18px;
+}
+}
