@@ -1,0 +1,60 @@
+#pp-container ol {
+	counter-reset: li;
+	font: 15px 'trebuchet MS', 'lucida sans';
+	color: black;
+	list-style: none;
+	margin-bottom: 1em;
+	padding: 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+#pp-container br {
+	display: block;
+	margin-top: .7em;
+}
+
+#pp-container a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+#pp-container a:hover {
+	background: #eee;
+}
+
+#pp-container a:before {
+	content: counter(li);
+	counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+#pp-count {
+	display: block;
+	float: right;
+	border-style: solid;
+	border-color: #666;
+	border-width: 1px;
+	border-radius: .4em;
+	background-color: #f6f6f6;
+	font-size: 95% !important;
+	margin-top: -.6em;
+}

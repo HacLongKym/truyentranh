@@ -1,0 +1,55 @@
+#pp-container, #pp-container a, #pp-container ol {
+	font-weight:bold;
+	color:#000;
+	font-size:105%;
+	text-decoration:none;
+	list-style-type:decimal;
+	text-shadow:0px 1px 0px rgba(0, 0, 0, 0.5);
+	counter-reset:li;
+	margin-left:0;
+	padding-left:0;
+}
+
+#pp-container a:hover {
+	text-decoration: underline ;
+	color: white;
+}
+
+#pp-container ol > li {
+    position:relative;
+    margin:0 0 6px 2em;
+    padding:4px 8px;
+    list-style:none;
+    border-top:2px solid #666;
+    background:#f6f6f6;
+}
+
+#pp-container ol > li:before {
+    content:counter(li);
+    counter-increment:li;
+    position:absolute;
+    top:-2px;
+    left:-2em;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    width:2em;
+    margin-right:8px;
+    padding:4px;
+    border-top:2px solid #666;
+    color:#fff;
+    background:#666;
+    font-weight:bold;
+    font-family:"Helvetica Neue", Arial, sans-serif;
+    text-align:center;
+}
+
+#pp-count {
+	display: block;
+	float: right;
+	border-style: solid;
+	border-color: #666;
+	border-width: 1px;
+	background-color: #f6f6f6;
+	font-size: 95% !important;
+}

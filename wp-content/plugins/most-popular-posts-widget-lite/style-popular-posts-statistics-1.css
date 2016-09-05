@@ -1,0 +1,134 @@
+#pp-container, #pp-container a, #pp-container ol {
+	font-weight: bold;
+	color: black;
+	font-size: 105%;
+	text-decoration: none;
+	list-style: outside none none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#pp-container a:hover {
+	text-decoration: underline ;
+	color: white;
+}
+
+#pp-count {
+	display: block;
+	float: right;
+	border-style: solid;
+	border-color: blue;
+	border-width: 1px;
+	background-color: #d4d4d4;
+	font-size: 95% !important;
+}
+
+#pp-0-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: red;
+	width: 100%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-1-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: orange;
+	width: 97%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-2-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: yellow;
+	width: 94%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-3-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #bbe31c;
+	width: 91%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-4-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #94b416;
+	width: 88%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-5-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #02bec8;
+	width: 85%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-6-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #73c0ee;
+	width: 82%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-7-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #4993e4;
+	width: 79%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-8-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #1d6fc9;
+	width: 76%;
+	padding: 5px;
+	border-radius: 7px;
+}
+
+#pp-9-title {
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	background-color: #3d56e7;
+	width: 73%;
+	padding: 5px;
+	border-radius: 7px;
+}
