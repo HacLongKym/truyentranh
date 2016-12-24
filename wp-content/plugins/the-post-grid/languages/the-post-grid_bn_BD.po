@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: The Post Grid\n"
+"POT-Creation-Date: 2016-02-29 21:21+0600\n"
+"PO-Revision-Date: 2016-02-29 21:28+0600\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: the-post-grid.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: bn\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: lib/classes/rtTPGAjaxResponse.php:27
+msgid "Settings successfully updated"
+msgstr "সেটিংস সফলভাবে আপডেট"
+
+#: lib/classes/rtTPGAjaxResponse.php:32
+msgid "Security Error !!"
+msgstr "নিরাপত্তা ত্রুটি"
+
+#: lib/classes/rtTPGAjaxResponse.php:58
+msgid "<div class=\"field-holder\">No Taxonomy found</div>"
+msgstr "<div class=\"field-holder\">কোনো Taxonomy পাওয়া যায় নি</div>"
+
+#: lib/classes/rtTPGAjaxResponse.php:62 lib/classes/rtTPGAjaxResponse.php:81
+#: lib/classes/rtTPGAjaxResponse.php:120
+msgid "Security error"
+msgstr "নিরাপত্তা ত্রুটি"
+
+#: lib/classes/rtTPGAjaxResponse.php:134
+msgid "Select Short code"
+msgstr "শর্ট কোড নির্বাচন"
+
+#: lib/classes/rtTPGAjaxResponse.php:136
+msgid "Default"
+msgstr "পূর্বনির্ধারিত তালিকা"
+
+#: lib/classes/rtTPGAjaxResponse.php:145
+msgid "No shortCode found."
+msgstr "কোন ফলাফল পাওয়া যায়নি।"
+
+#. Plugin Name of the plugin/theme
+#: lib/classes/rtTPGInit.php:21 lib/classes/rtTPGInit.php:22
+#: lib/widgets/rtTPGSimpleWidget.php:17
+msgid "The Post Grid"
+msgstr ""
+
+#: lib/classes/rtTPGInit.php:23
+msgid "Add New"
+msgstr "নতুন আরেকটি"
+
+#: lib/classes/rtTPGInit.php:24
+msgid "All Grid Views"
+msgstr ""
+
+#: lib/classes/rtTPGInit.php:25
+msgid "Add New Post Grid"
+msgstr "নতুন Grid যোগ"
+
+#: lib/classes/rtTPGInit.php:26
+msgid "Edit Post Grid"
+msgstr ""
+
+#: lib/classes/rtTPGInit.php:27
+msgid "New Post Grid"
+msgstr "নতুন Grid যোগ"
+
+#: lib/classes/rtTPGInit.php:28
+msgid "View Post Grid"
+msgstr ""
+
+#: lib/classes/rtTPGInit.php:29
+msgid "Search Post Grids"
+msgstr "অনুসন্ধান করুন"
+
+#: lib/classes/rtTPGInit.php:30
+msgid "No Post Grids found"
+msgstr "কোনো Grid পাওয়া যায় নি"
+
+#: lib/classes/rtTPGInit.php:31
+msgid "No Post Grids found in Trash"
+msgstr "কোনো Grid পাওয়া যায় নি"
+
+#: lib/classes/rtTPGInit.php:144
+msgid "Settings"
+msgstr "সেটিংগুলি"
+
+#: lib/classes/rtTPGInit.php:157 lib/classes/rtTPGInit.php:160
+msgid "Field group updated."
+msgstr "সেটিংস সফলভাবে আপডেট"
+
+#: lib/classes/rtTPGInit.php:158
+msgid "Custom field updated."
+msgstr "কাস্টম ক্ষেত্র আপডেট করা হয়েছে."
+
+#: lib/classes/rtTPGInit.php:159
+msgid "Custom field deleted."
+msgstr "কাস্টম ক্ষেত্র মুছে ফেলা."
+
+#: lib/classes/rtTPGInit.php:162
+#, php-format
+msgid "Field group restored to revision from %s"
+msgstr ""
+
+#: lib/classes/rtTPGInit.php:163
+msgid "Field group published."
+msgstr "বিস্তারিত পৃষ্ঠা ক্ষেত্র নিয়ন্ত্রণ"
+
+#: lib/classes/rtTPGInit.php:164
+msgid "Field group saved."
+msgstr "ক্ষেত্র নির্বাচন"
+
+#: lib/classes/rtTPGInit.php:165
+msgid "Field group submitted."
+msgstr "বিস্তারিত পৃষ্ঠা ক্ষেত্র নিয়ন্ত্রণ"
+
+#: lib/classes/rtTPGInit.php:166
+msgid "Field group scheduled for."
+msgstr "বিস্তারিত পৃষ্ঠা ক্ষেত্র নিয়ন্ত্রণ"
+
+#: lib/classes/rtTPGInit.php:167
+msgid "Field group draft updated."
+msgstr "বিভাগ"
+
+#: lib/classes/rtTPGMeta.php:26
+msgid "Shortcode"
+msgstr "শর্ট কোড"
+
+#: lib/classes/rtTPGMeta.php:74
+msgid "Short Code Generator"
+msgstr "শর্ট কোড জেনারেটরের"
+
+#: lib/classes/rtTPGMeta.php:106
+msgid "Post Source"
+msgstr "Post উৎস"
+
+#: lib/classes/rtTPGMeta.php:107
+msgid "Layout Settings"
+msgstr "বিন্যাস সেটিংস"
+
+#: lib/classes/rtTPGMeta.php:108
+msgid "Field Selection"
+msgstr "ক্ষেত্র নির্বাচন"
+
+#: lib/classes/rtTPGMeta.php:109
+msgid "Style"
+msgstr "চিত্র শৈলী"
+
+#: lib/classes/rtTPGShortCode.php:231
+msgid "Show all"
+msgstr "সকল"
+
+#: lib/classes/rtTPGShortCode.php:290
+msgid "No post found"
+msgstr "কোন পোস্ট পাওয়া যায়নি"
+
+#: lib/views/settings/settings.php:12
+msgid "The Post Grid Settings"
+msgstr ""
+
+#: lib/views/settings/settings.php:13
+msgid "General settings"
+msgstr "সাধারণ বিন্যাস"
+
+#: lib/views/settings/settings.php:14 lib/views/settings/settings.php:37
+msgid "Documentation"
+msgstr "ডকুমেন্টেশন"
+
+#: lib/views/settings/settings.php:33
+msgid "Short Code"
+msgstr "শর্ট কোড"
+
+#: lib/views/settings/settings.php:35
+msgid "id = short code id (1,2,3,4)"
+msgstr ""
+
+#: lib/views/settings/settings.php:36
+msgid "title = Shot code title (Not recommended)"
+msgstr ""
+
+#: lib/views/settings/settings.php:37
+msgid "Demo"
+msgstr ""
+
+#: lib/widgets/rtTPGSimpleWidget.php:16
+msgid "Display The post grid."
+msgstr "গ্রিড দেখাও (~ড)"
+
+#: lib/widgets/rtTPGSimpleWidget.php:28
+msgid "TPL Team"
+msgstr ""
+
+#: lib/widgets/rtTPGSimpleWidget.php:84
+msgid "No member found"
+msgstr ""
+
+#: lib/widgets/rtTPGSimpleWidget.php:103
+msgid "Title:"
+msgstr ""
+
+#: lib/widgets/rtTPGSimpleWidget.php:106
+msgid "Number of member to show:"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://demo.radiustheme.com/wordpress/plugins/the-post-grid/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Fast & Easy way to display WordPress post in Grid, List & Isotope view "
+"( filter by category, tag, author..)  without a single line of coding."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "RadiusTheme"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://radiustheme.com/"
+msgstr ""
