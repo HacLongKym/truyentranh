@@ -11,7 +11,8 @@ function ceo_list_jump_to_comic($exclude = '', $return = false) {
 	global $post;
 	ceo_protect();
 	$output = '';
-	$terms = wp_get_object_terms( $post->ID, 'chapters');
+
+	$terms = wp_get_object_terms( $post->ID, 'category');
 	if (!empty($terms)){
 		$term = reset($terms); // only one chapter
 		$output = '<form method="get" class="comic-list-dropdown-form">';
