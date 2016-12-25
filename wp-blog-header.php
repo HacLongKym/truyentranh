@@ -12,8 +12,14 @@ if ( !isset($wp_did_header) ) {
 	// Load the WordPress library.
 	require_once( dirname(__FILE__) . '/wp-load.php' );
 
-	// Set up the WordPress query.
-	wp();
+	//LuanDT add to search
+	if (isset($_REQUEST['s']) || isset($_REQUEST['S'])) {
+		wp(array('post_type'=>'post'));		
+	} else {
+		// Set up the WordPress query.
+		wp();		
+	}
+	
 
 	// Load the theme template.
 	require_once( ABSPATH . WPINC . '/template-loader.php' );
