@@ -30,7 +30,7 @@ function show_views($postID, $posnumber, $numberofdays, $hitsonoff, $ignoredpage
 			$countending = "</span></span></li><br />";
 			$cat_id = get_the_category($post_number);
 			$post_cat_id = $cat_id[0]->cat_ID;
-			$post_name_by_id = $wpdb->get_results("SELECT post_title FROM $posts_table WHERE ID = $post_number", ARRAY_A);
+			$post_name_by_id = $wpdb->get_results("SELECT post_title FROM $posts_table WHERE ID = $post_number and 	post_type like 'post'", ARRAY_A);
 			if (!$post_name_by_id){ // checks whether post with this ID exists, if not - delete record and break script
 				$wpdb->query("DELETE FROM $popular_posts_statistics_table WHERE post_id = $post_number");
 				break;

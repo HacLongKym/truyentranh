@@ -41,7 +41,7 @@ class popular_posts_statistics extends WP_Widget {
 
 	// widget constructor
 	function popular_posts_statistics() {
-		
+
 		$widget_ops = array('description' => __('Most Popular Posts is a widget that is able to display a list of the most popular posts visited/commented by the readers of your site.'));
 		parent::__construct(false, $name = __('Most Popular Posts Widget', 'wp_widget_plugin'), $widget_ops);
 
@@ -62,7 +62,7 @@ class popular_posts_statistics extends WP_Widget {
 
 		<p>
 		<label for="<?php echo $this->get_field_id('commentsorvisits'); ?>">Rank posts popularity by number of comments or visits?</label>
-		<select id="<?php echo $this->get_field_id('commentsorvisits'); ?>" name="<?php echo $this->get_field_name('commentsorvisits'); ?>" value="<?php echo $instance['commentsorvisits']; ?>" style="width:100%;">	
+		<select id="<?php echo $this->get_field_id('commentsorvisits'); ?>" name="<?php echo $this->get_field_name('commentsorvisits'); ?>" value="<?php echo $instance['commentsorvisits']; ?>" style="width:100%;">
 			<option value="1" <?php if ($instance['commentsorvisits']==1) {echo "selected";} ?>>Visits</option>
 			<option value="2" <?php if ($instance['commentsorvisits']==2) {echo "selected";} ?>>Comments</option>
 		</select>
@@ -133,7 +133,7 @@ class popular_posts_statistics extends WP_Widget {
 			<option value="5" <?php if ($instance['cssselector']==5) {echo "selected";} ?>>Standard Style No. 5 (grey list with red numbers)</option>
 			<option value="6" <?php if ($instance['cssselector']==6) {echo "selected";} ?>>Standard Style No. 6 (simple grey list with grey numbers)</option>
 			<option value="7" <?php if ($instance['cssselector']==7) {echo "selected";} ?>>Custom Style (edit custom.css file)</option>
-			<?php 
+			<?php
 				if(file_exists(plugin_dir_path(__FILE__).'style-popular-posts-statistics-1-premium.css')){
 			?>		<option value="8" <?php if ($instance['cssselector']==8) {echo "selected";} ?>>Premium Style No. 1</option>
 			<?php
@@ -166,7 +166,7 @@ class popular_posts_statistics extends WP_Widget {
 			<label for="<?php echo $this->get_field_id('visitstext'); ?>">If you would like to change "visit(s)" text, you can do it here:</label>
 			<input id="<?php echo $this->get_field_id('visitstext'); ?>" name="<?php echo $this->get_field_name('visitstext'); ?>" value="<?php echo $instance['visitstext']; ?>" style="width:100%;" />
 		</p>
-		
+
 		<p>
 			<label for="<?php echo $this->get_field_id('cachetime'); ?>">Cache refresh time in minutes (default value is 0 minutes, which means cache is off):</label>
 			<input id="<?php echo $this->get_field_id('cachetime'); ?>" name="<?php echo $this->get_field_name('cachetime'); ?>" value="<?php echo $instance['cachetime']; ?>" style="width:100%;" />
@@ -233,8 +233,17 @@ class popular_posts_statistics extends WP_Widget {
 		if ($title) {
 			echo $before_title . $title . $after_title;
 		}
-
 		$postID = get_the_ID();
+		//LuanDT get category id
+		$cat_id = wp_get_post_categories($postID);
+		if (!empty($cat_id)) {
+			$cat_id = $cat_id[0];
+			//LuanDT get postID parent
+			$post = get_posts(array('category' => $cat_id, 'post_type' => 'post'));
+			if (!empty($post)) {
+				$postID = $post[0]->ID;
+			}
+		}
 		$cache_file = plugin_dir_path(__FILE__).'popular_posts.cache';
 
 		if(file_exists($cache_file) && (filesize($cache_file) > 50) && (filemtime($cache_file) > (time() - 60 * $cachetime ))){ //cache
@@ -244,7 +253,6 @@ class popular_posts_statistics extends WP_Widget {
 			file_put_contents($cache_file, $to_file);
 			$cached = file_get_contents($cache_file);
 		}
-
 		echo '<div id="pp-container">';
 		echo $cached;
 		echo '</div>';
@@ -258,7 +266,7 @@ class popular_posts_statistics extends WP_Widget {
 // shortcode function
 function most_popular_posts_shortcode_handler() {
 	$widgetOptions = get_option('widget_popular_posts_statistics');
-     
+
 	$postID = get_the_ID();
 	if($widgetOptions != NULL){ //if widget options are not null
 		$posnumber = array_column($widgetOptions, 'posnumber');

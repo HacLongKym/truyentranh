@@ -303,7 +303,7 @@ class Numix_Post_Slider {
 
 		$domain = $this->plugin_slug;
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-		
+
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, basename( plugin_dir_path( dirname( __FILE__ ) ) ) . '/languages/' );
 
@@ -332,7 +332,7 @@ class Numix_Post_Slider {
 	 * Add numix slider shortcode tag
 	 *
 	 * @since  1.0.0
-	 * 
+	 *
 	 * @param array   $atts Shortcode attributes
 	 *
 	 * @return  string          Slider HTML and javascript
@@ -343,12 +343,23 @@ class Numix_Post_Slider {
 			shortcode_atts(
 				array(
 					'id' => '-1',
-				), $atts 
-				) 
+				), $atts
+				)
 			);
 		return $this->get_numixslider( $id );
 	}
-
+	private function get_category_top_view($posnumber) {
+		global $wpdb;
+		$popular_posts_statistics_table = $wpdb->prefix . 'popular_posts_statistics';
+		$posts_table = $wpdb->prefix . 'posts';
+		// $result = $wpdb->get_results("SELECT hit_count FROM $popular_posts_statistics_table WHERE date >= NOW() - INTERVAL 30 DAY ORDER BY hit_count DESC LIMIT $posnumber", ARRAY_A);
+		$post_id_number = $wpdb->get_results("SELECT post_id FROM $popular_posts_statistics_table WHERE date >= NOW() - INTERVAL 30 DAY ORDER BY hit_count DESC LIMIT $posnumber", ARRAY_A);
+		$result = array();
+		foreach ($post_id_number as $value) {
+			$result[] = $value['post_id'];
+		}
+		return $result;
+	}
 	/**
 	 * Get numix slider with HTML and javscript
 	 *
@@ -359,10 +370,30 @@ class Numix_Post_Slider {
 	 * @return  string     Slider HTML and javascript
 	 */
 	public function get_numixslider( $id ) {
-
 		$id = intval( $id );
-		if ( $id <= 0 )
-			die ( 'ns-oops-invalid-slider-id' );
+		$list_post = array();
+		if ( $id <= 0 || $id == 9999) {
+			//LuanDT set default top truyện
+			$list_post = self::get_category_top_view(10);
+			$id = 9999;
+			// $slider_row = array(
+			// 		"name" => 'Top Truyện Trong Tháng',
+			// 		"width" => '100%',
+			// 		"height" => '200px',
+			// 		"max_posts" => 10,
+			// 		"post_categories" => '',
+			// 		"post_orderby" =>  'menu_order',
+			// 		"post_order" => "ASC",
+			// 		"js_settings" => '{"infinite":true,"loop":false,"center":true,"autoPlay":false,"autoPlayInterval":3000,"autoPlayStopAction":true,"arrowsNav":true,"animationSpeed":800,"activateOnClick":false}',
+			// 		"post_relation" => "AND",
+			// 		"arrows_auto_hide" => true,
+			// 		"bottom_nav_type" => "Thumbnail",
+			// 		"activate_on_click" => false,
+			// 		"display_post_title" => true,
+			// 		"hide_posts" => true,
+			// 	);
+			// return ( 'ns-oops-invalid-slider-id' );
+		}
 
 		global $wpdb;
 		$slider_row = $wpdb->get_row( 'SELECT * FROM '.Numix_Post_Slider::$table_name." WHERE id = $id", ARRAY_A );
@@ -389,9 +420,7 @@ class Numix_Post_Slider {
 				$count++;
 			}
 		}
-
-		$posts = get_posts(
-			array(
+		$args = array(
 				'posts_per_page' => intval( $slider_row['max_posts'] ),
 				'orderby' => $slider_row['post_orderby'],
 				'order' => $slider_row['post_order'],
@@ -404,9 +433,11 @@ class Numix_Post_Slider {
 						'value' => '',
 					),
 				)
-			)
-		);
-
+			);
+		if (!empty($list_post)) {
+			$args['include'] = $list_post;
+		}
+		$posts = get_posts($args);
 
 		if ( ! empty( $posts ) ) {
 
@@ -438,7 +469,7 @@ class Numix_Post_Slider {
 				$slider_markup .= '<a href="'.$post_url.'">';
 				$slider_markup .= '<img src="'.$featured_image.'" alt="'.$post->post_title.'">';
 				$slider_markup .= '</a>';
-				
+
 				if ( $slider_row['display_post_title'] == 'true' ) {
 					$post_url       = get_permalink( $post->ID );
 					$slider_markup .= '<div class="ns-caption">';
@@ -487,7 +518,7 @@ class Numix_Post_Slider {
 	 * Get resized post featured image URL based on height
 	 *
 	 * @since 1.0.0
-	 * 
+	 *
 	 * @param int     $post_id       Post ID from the loop
 	 * @param int     $slider_height Slider height set from plugin admin
 	 *
@@ -523,7 +554,7 @@ class Numix_Post_Slider {
 	 * Get resized post featured image thumbnail URL
 	 *
 	 * @since 1.0.0
-	 * 
+	 *
 	 * @param int     $post_id      Post ID from the loop
 	 * @param int     $thumb_width  Thumbnail width set from plugin admin
 	 * @param int     $thumb_height Thumbnail height set from plugin admin
@@ -595,7 +626,7 @@ class Numix_Post_Slider {
 	 */
 	public function exlude_category_numix( $query ) {
 		if( $query->is_home ) {
-			 
+
 			global $wpdb;
 
 			$slider_rows          = $wpdb->get_results( 'SELECT post_categories, hide_posts FROM '.Numix_Post_Slider::$table_name, ARRAY_A );
@@ -618,32 +649,32 @@ class Numix_Post_Slider {
 
 					}
 				}
-			}			
+			}
 			if( !empty( $categories_arr_numix ) ) {
 				foreach( $categories_arr_numix as $cat ) {
-					$catobj = get_category_by_slug( $cat ); 
+					$catobj = get_category_by_slug( $cat );
 	  				$catid  = $catobj->term_id;
 	  				if( $catid != '' ) {
 	  					$cats_to_exclude[]=$catid;
 	  				}
-				}	
+				}
 			}
-			if( !empty( $cats_to_exclude ) ) {  
+			if( !empty( $cats_to_exclude ) ) {
 
 				(array) $cats_exclude_before = $query->get("category__not_in");
-				
-				if( !empty( $cat_exclude_before ) && is_array( $cats_exclude_before ) ) { 
-					
+
+				if( !empty( $cat_exclude_before ) && is_array( $cats_exclude_before ) ) {
+
 					$cats_to_exclude = array_unique( array_merge( $cats_to_exclude, $cats_exclude_before ) );
-				
+
 				}
-				
+
 				$query->set( "category__not_in", $cats_to_exclude );
 
-			}			
-		 
+			}
+
 		}
-		
+
 		return $query;
 	}
 }

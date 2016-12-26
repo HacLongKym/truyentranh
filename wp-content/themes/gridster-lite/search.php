@@ -49,6 +49,9 @@ $('#grid').click(function(event){event.preventDefault();$('#products .item').rem
 		width: 100%;    
 		margin: 0;
 	}
+	.post  {
+		width: 31%;
+	}
 	.glyphicon { margin-right:5px; }
 	.thumbnail
 	{
@@ -73,6 +76,7 @@ $('#grid').click(function(event){event.preventDefault();$('#products .item').rem
 
 	.item.list-group-item .list-group-image
 	{
+		max-width: 20%;
 	    margin-right: 10px;
 	}
 	.item.list-group-item .thumbnail
